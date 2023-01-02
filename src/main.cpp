@@ -10,7 +10,7 @@ static void tick_counter() {
   tick_ts_old = tick_ts;
 }
 void setup() {
-  const int bits = 6;
+  const int bits = 4;
   const float power = .95;
   Serial.begin(115200);
   ticks = 0;
