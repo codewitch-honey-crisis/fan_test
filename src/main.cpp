@@ -10,7 +10,7 @@ static void tick_counter() {
   tick_ts_old = tick_ts;
 }
 void setup() {
-  const int bits = 4;
+  const int bits = 6;
   const float power = .95;
   Serial.begin(115200);
   ticks = 0;
@@ -21,7 +21,7 @@ void setup() {
   attachInterrupt(22,tick_counter,FALLING);
   ledcAttachPin(23,0);
   ledcSetup(0,25*1000,bits);
-  ledcWrite(0,(1<<bits)-2);
+  ledcWrite(0,((1<<bits)-1)*power);
 }
 
 void loop() {
